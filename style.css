@@ -1,0 +1,696 @@
+/* ------------------------------
+   GENERAL PAGE STYLING
+------------------------------ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f8fb;
+  color: #172033;
+  line-height: 1.6;
+}
+
+
+/* ------------------------------
+   HEADER / HERO SECTION
+------------------------------ */
+
+header {
+  min-height: 65vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 60px 25px;
+
+  background: linear-gradient(
+    135deg,
+    #0068b5,
+    #004a86
+  );
+
+  color: white;
+}
+
+header > div {
+  max-width: 900px;
+}
+
+header img {
+  width: 170px;
+  height: auto;
+
+  margin-bottom: 35px;
+}
+
+header h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+
+  line-height: 1;
+
+  margin-bottom: 25px;
+}
+
+header p {
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  font-size: 1.2rem;
+
+  opacity: 0.95;
+}
+
+
+/* ------------------------------
+   TIMELINE SECTION
+------------------------------ */
+
+.timeline {
+  display: flex;
+
+  gap: 30px;
+
+  overflow-x: auto;
+
+  padding: 80px 8vw 70px;
+
+  scroll-snap-type: x mandatory;
+
+  position: relative;
+}
+
+
+/* Horizontal timeline line */
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  top: 105px;
+
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  background-color: #0068b5;
+
+  z-index: 0;
+}
+
+
+/* ------------------------------
+   TIMELINE CARDS
+------------------------------ */
+
+.timeline-card {
+  flex: 0 0 350px;
+
+  background-color: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  z-index: 1;
+
+  scroll-snap-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* ------------------------------
+   OPTIONAL TRANSFORM BONUS
+------------------------------ */
+
+.timeline-card:hover {
+  transform: scale(1.04) translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.16);
+}
+
+
+/* ------------------------------
+   CARD IMAGES
+------------------------------ */
+
+.timeline-card img {
+  display: block;
+
+  width: 100%;
+  height: 210px;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+
+.timeline-card:hover img {
+  transform: scale(1.08);
+}
+
+
+/* ------------------------------
+   CARD CONTENT
+------------------------------ */
+
+.timeline-card h2 {
+  display: inline-block;
+
+  margin: 25px 25px 10px;
+
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  background-color: #0068b5;
+
+  color: white;
+
+  font-size: 1rem;
+}
+
+.timeline-card h3 {
+  font-size: 1.5rem;
+
+  padding: 0 25px;
+
+  margin-bottom: 10px;
+}
+
+
+/* ------------------------------
+   HOVER DESCRIPTION
+------------------------------ */
+
+.timeline-card p {
+  max-height: 0;
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  transform: translateY(10px);
+
+  padding: 0 25px;
+
+  color: #596579;
+
+  transition:
+    max-height 0.5s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    padding 0.4s ease;
+}
+
+.timeline-card:hover p {
+  max-height: 250px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  padding: 0 25px 25px;
+}
+
+
+/* ------------------------------
+   TIMELINE INSTRUCTIONS
+------------------------------ */
+
+.timeline-instructions {
+  text-align: center;
+
+  padding: 0 20px 70px;
+
+  color: #596579;
+
+  font-size: 0.95rem;
+}
+
+
+/* ------------------------------
+   CUSTOM SCROLLBAR
+------------------------------ */
+
+.timeline::-webkit-scrollbar {
+  height: 10px;
+}
+
+.timeline::-webkit-scrollbar-track {
+  background: #dce7ef;
+
+  border-radius: 10px;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background: #0068b5;
+
+  border-radius: 10px;
+}
+
+
+/* ==================================================
+   PROJECT 3 ADDITIONS
+================================================== */
+
+
+/* ------------------------------
+   THREE-COLUMN SECTION
+------------------------------ */
+
+.sustainability-section {
+  background-color: #ffffff;
+
+  border-top: 1px solid #dce7ef;
+}
+
+
+.sustainability-section h2 {
+  color: #172033;
+
+  font-size: 2.3rem;
+
+  margin-bottom: 15px;
+}
+
+
+.sustainability-section > .container > .text-center > p {
+  color: #4d596b;
+
+  max-width: 700px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ------------------------------
+   INFORMATION CARDS
+------------------------------ */
+
+.info-card {
+  background-color: #f4f8fb;
+
+  border: 1px solid #dce7ef;
+
+  border-radius: 15px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.info-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+.info-card h3 {
+  color: #172033;
+
+  margin: 20px 0 15px;
+
+  font-size: 1.5rem;
+}
+
+
+.info-card p {
+  color: #3e4a5c;
+
+  margin-bottom: 25px;
+}
+
+
+/* ------------------------------
+   ICONS
+------------------------------ */
+
+.icon-container {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto;
+
+  border-radius: 50%;
+
+  background-color: #0068b5;
+
+  color: white;
+
+  font-size: 2rem;
+}
+
+
+/* ------------------------------
+   BUTTONS
+------------------------------ */
+
+.btn-primary {
+  background-color: #0068b5;
+
+  border-color: #0068b5;
+
+  padding: 10px 22px;
+
+  font-weight: bold;
+}
+
+
+.btn-primary:hover {
+  background-color: #004a86;
+
+  border-color: #004a86;
+}
+
+
+/* Keyboard accessibility */
+
+.btn-primary:focus,
+.btn-primary:focus-visible,
+.form-control:focus,
+.form-check-input:focus,
+.accordion-button:focus {
+  outline: 3px solid #ffb000;
+
+  outline-offset: 3px;
+
+  box-shadow: none;
+}
+
+
+/* ------------------------------
+   NEWSLETTER SECTION
+------------------------------ */
+
+.newsletter-section {
+  background-color: #eaf3f8;
+}
+
+
+.newsletter-box {
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  padding: 45px;
+
+  background-color: white;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.newsletter-box h2 {
+  color: #172033;
+
+  margin-bottom: 15px;
+}
+
+
+.newsletter-box > p {
+  color: #3e4a5c;
+
+  margin-bottom: 30px;
+}
+
+
+.form-label {
+  font-weight: bold;
+
+  color: #172033;
+}
+
+
+.form-control {
+  min-height: 48px;
+
+  border: 2px solid #7a8797;
+}
+
+
+.form-control:focus {
+  border-color: #0068b5;
+}
+
+
+.form-check-label {
+  color: #172033;
+}
+
+
+/* ------------------------------
+   FAQ / ACCORDION
+------------------------------ */
+
+.faq-section {
+  background-color: #ffffff;
+}
+
+
+.faq-section h2 {
+  color: #172033;
+}
+
+
+.accordion-button {
+  font-weight: bold;
+
+  color: #172033;
+}
+
+
+.accordion-button:not(.collapsed) {
+  background-color: #eaf3f8;
+
+  color: #004a86;
+}
+
+
+.accordion-body {
+  color: #3e4a5c;
+
+  line-height: 1.7;
+}
+
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+footer {
+  background-color: #172033;
+
+  color: white;
+}
+
+
+.footer-link {
+  color: white;
+
+  text-decoration: underline;
+
+  margin: 0 8px;
+}
+
+
+.footer-link:hover {
+  color: #b8dcf2;
+}
+
+
+/* ------------------------------
+   RTL SUPPORT
+------------------------------ */
+
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+
+html[dir="rtl"] .text-center {
+  text-align: center !important;
+}
+
+
+html[dir="rtl"] .timeline {
+  direction: rtl;
+}
+
+
+/*
+   Bootstrap already handles most RTL
+   spacing, grids, forms, and buttons.
+*/
+
+
+/* ------------------------------
+   MOBILE RESPONSIVENESS
+------------------------------ */
+
+@media (max-width: 700px) {
+
+  header {
+    min-height: 60vh;
+
+    padding: 50px 20px;
+  }
+
+
+  header img {
+    width: 140px;
+
+    margin-bottom: 25px;
+  }
+
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+
+  header p {
+    font-size: 1rem;
+  }
+
+
+  /* VERTICAL TIMELINE */
+
+  .timeline {
+    flex-direction: column;
+
+    overflow-x: visible;
+
+    padding: 50px 25px;
+
+    gap: 30px;
+
+    scroll-snap-type: none;
+  }
+
+
+  .timeline::before {
+    top: 0;
+    bottom: 0;
+
+    left: 18px;
+
+    right: auto;
+
+    width: 4px;
+
+    height: auto;
+  }
+
+
+  .timeline-card {
+    width: 100%;
+
+    max-width: 500px;
+
+    margin-left: 10px;
+
+    flex: none;
+  }
+
+
+  /* Mobile descriptions stay visible */
+
+  .timeline-card p {
+    max-height: 300px;
+
+    opacity: 1;
+
+    transform: none;
+
+    padding: 0 25px 25px;
+  }
+
+
+  .timeline-card:hover {
+    transform: none;
+  }
+
+
+  .timeline-card img {
+    height: 200px;
+  }
+
+
+  /* NEWSLETTER */
+
+  .newsletter-box {
+    padding: 30px 20px;
+  }
+
+
+  /* FOOTER */
+
+  footer .footer-link {
+    display: inline-block;
+
+    margin-top: 10px;
+  }
+
+}
+
+
+/* ------------------------------
+   REDUCED MOTION ACCESSIBILITY
+------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+  }
+
+}
